@@ -240,7 +240,7 @@
                         <tbody>
                             @foreach($cart as $id => $details)
                                 @php
-                                    $price = (float) str_replace('.', '', $details['price']);
+                                    $price = (float) $details['price'];
                                     $subtotal = $price * $details['quantity'];
                                     $formattedSubtotal = number_format($subtotal, 0, ',', '.');
                                 @endphp

@@ -13,7 +13,7 @@ class CartController extends Controller
         $total = 0;
         
         foreach ($cart as $item) {
-            $price = (float) str_replace('.', '', $item['price']);
+            $price = (float) $item['price'];
             $total += $price * $item['quantity'];
         }
 

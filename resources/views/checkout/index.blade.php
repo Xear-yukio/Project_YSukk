@@ -495,7 +495,7 @@
                                         <img src="{{ $details['image'] }}" alt="{{ $details['name'] }}" class="item-img">
                                         <div class="item-details">
                                             <span class="item-name">{{ $details['name'] }}</span>
-                                            <span class="item-qty">Jumlah: {{ $details['quantity'] }}</span>
+                                            <span class="item-qty">Rp {{ number_format($details['price'], 0, ',', '.') }} x {{ $details['quantity'] }}</span>
                                         </div>
                                     </div>
                                     <span class="item-price">Rp {{ number_format($details['price'] * $details['quantity'], 0, ',', '.') }}</span>

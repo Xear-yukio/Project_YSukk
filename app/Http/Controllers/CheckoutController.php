@@ -21,7 +21,7 @@ class CheckoutController extends Controller
 
         $total = 0;
         foreach ($cart as $item) {
-            $price = (float) str_replace('.', '', $item['price']);
+            $price = (float) $item['price'];
             $total += $price * $item['quantity'];
         }
 
@@ -52,7 +52,7 @@ class CheckoutController extends Controller
 
         $totalAmount = 0;
         foreach ($cart as $item) {
-            $price = (float) str_replace('.', '', $item['price']);
+            $price = (float) $item['price'];
             $totalAmount += $price * $item['quantity'];
         }
 
@@ -77,7 +77,7 @@ class CheckoutController extends Controller
 
             foreach ($cart as $id => $item) {
                 // Remove formatting from price if it's a string like "120.000"
-                $price = (float) str_replace('.', '', $item['price']);
+                $price = (float) $item['price'];
                 $productData = \App\Models\Product::find($id);
                 $order->items()->create([
                     'product_id' => $id,
